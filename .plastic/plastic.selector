@@ -1,0 +1,4 @@
+repository "cmsh@alexandr20@cloud"
+  path "/"
+    br "/main"
+    co "/main"
