@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class TimelineUIManager : MonoBehaviour
 {
@@ -30,15 +31,21 @@ public class TimelineUIManager : MonoBehaviour
         poiButtonMap[poi] = buttonRect;
     }
 
-
     void OnPOIButtonClicked(PointOfInterest poi)
     {
-        playerMovement.TeleportAndLookAt(poi.transform.position, poi.viewTarget.position);
-
-        // Retrieve the RectTransform from the dictionary and center on it
-        if (poiButtonMap.TryGetValue(poi, out RectTransform buttonRect))
+        if (!string.IsNullOrEmpty(poi.sceneName))
         {
-            StartCoroutine(CenterOnButtonCoroutine(buttonRect));
+            SceneManager.LoadScene(poi.sceneName); // Load the new scene if the name is provided
+        }
+        else
+        {
+            playerMovement.TeleportAndLookAt(poi.transform.position, poi.viewTarget.position);
+
+            // Retrieve the RectTransform from the dictionary and center on it
+            if (poiButtonMap.TryGetValue(poi, out RectTransform buttonRect))
+            {
+                StartCoroutine(CenterOnButtonCoroutine(buttonRect));
+            }
         }
     }
 
@@ -46,9 +53,10 @@ public class TimelineUIManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame(); // Ensure UI elements are updated
 
-        // Check if scrolling is needed
-        float totalContentWidth = scrollContent.GetComponentsInChildren<RectTransform>().Sum(rt => rt.rect.width);
+        // Assuming the scroll view's viewport is the direct parent of the content
         float viewportWidth = scrollContent.parent.GetComponent<RectTransform>().rect.width;
+
+        float totalContentWidth = scrollContent.rect.width;
         if (totalContentWidth <= viewportWidth)
         {
             // Not enough content to require scrolling, so exit coroutine
@@ -56,14 +64,13 @@ public class TimelineUIManager : MonoBehaviour
         }
 
         // Calculate the desired position of the button
-        float buttonPositionInScroll = buttonRectTransform.localPosition.x
-                                       - (scrollContent.rect.width * scrollContent.pivot.x)
+        float buttonPositionInScroll = buttonRectTransform.anchoredPosition.x
                                        + (buttonRectTransform.rect.width * buttonRectTransform.pivot.x);
-        float contentMoveOffset = viewportWidth * 0.5f - buttonPositionInScroll;
+        float contentMoveOffset = viewportWidth / 2 - buttonPositionInScroll;
         float newContentPosX = scrollContent.anchoredPosition.x + contentMoveOffset;
 
         // Clamp the position to prevent over-scrolling
-        float contentBounds = Mathf.Max((scrollContent.rect.width - viewportWidth) * 0.5f, 0);
+        float contentBounds = (totalContentWidth - viewportWidth) / 2;
         newContentPosX = Mathf.Clamp(newContentPosX, -contentBounds, contentBounds);
 
         // Soften the animation
@@ -84,6 +91,7 @@ public class TimelineUIManager : MonoBehaviour
 
         scrollContent.anchoredPosition = endPos;
     }
+
 
     void Start()
     {

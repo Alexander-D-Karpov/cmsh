@@ -60,14 +60,38 @@ public class PlayerMovement : MonoBehaviour
 
     private void ProcessLook()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // Check if we are running on a mobile device
+        if (Application.isMobilePlatform)
+        {
+            // Check if there is at least one touch present
+            if (Input.touchCount > 0)
+            {
+                // Get the first touch
+                Touch touch = Input.GetTouch(0);
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+                // Process touch movement for rotation
+                float touchX = touch.deltaPosition.x * mouseSensitivity * Time.deltaTime;
+                float touchY = touch.deltaPosition.y * mouseSensitivity * Time.deltaTime;
+
+                xRotation -= touchY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+                Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                transform.Rotate(Vector3.up * touchX);
+            }
+        }
+        else // Existing mouse look functionality
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            transform.Rotate(Vector3.up * mouseX);
+        }
     }
+
 
     private void ToggleCursorState(bool isUIActive)
     {
