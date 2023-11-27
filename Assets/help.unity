@@ -530,7 +530,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 752011274}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999232
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 374577114}
   - component: {fileID: 374577115}
   m_Layer: 0
-  m_Name: CylinderPoint
+  m_Name: Ugol2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1020,13 +1020,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374577113}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.73, y: 0, z: 23.86}
+  m_LocalRotation: {x: -0.099839255, y: 0.7186479, z: 0.052115604, w: 0.6861934}
+  m_LocalPosition: {x: 11.62, y: 10.61, z: 15.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 425817644}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -12.235, y: 93.1, z: -4.224}
 --- !u!114 &374577115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,8 +1039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63acfed2360e4d4bbe8c2d3669ea8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poiName: Cylinder
-  viewTarget: {fileID: 1966113535}
+  poiName: Ugol 2
+  viewTarget: {fileID: 1194539317}
   order: 0
 --- !u!1 &420831547
 GameObject:
@@ -1671,7 +1671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 391.39972, y: -9.225063}
+  m_AnchoredPosition: {x: 391.39938, y: -9.197623}
   m_SizeDelta: {x: 0, y: 16.339996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602537645
@@ -3232,7 +3232,7 @@ GameObject:
   - component: {fileID: 1190136464}
   - component: {fileID: 1190136465}
   m_Layer: 0
-  m_Name: SphererPoint
+  m_Name: Ugol3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3246,13 +3246,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190136463}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.73, y: 0, z: -38.5}
+  m_LocalRotation: {x: -0, y: 0.9958227, z: -0, w: 0.091308184}
+  m_LocalPosition: {x: 28.725, y: 11.715, z: 11.898}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 425817644}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 169.522, z: 0}
 --- !u!114 &1190136465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3265,7 +3265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63acfed2360e4d4bbe8c2d3669ea8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poiName: Sphere
+  poiName: Ugol3
   viewTarget: {fileID: 420900873}
   order: 0
 --- !u!4 &1194539317 stripped
@@ -3284,7 +3284,7 @@ GameObject:
   - component: {fileID: 1236546989}
   - component: {fileID: 1236546990}
   m_Layer: 0
-  m_Name: CubePoint
+  m_Name: Ugol1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3299,7 +3299,7 @@ Transform:
   m_GameObject: {fileID: 1236546988}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.98, y: 0, z: 23.86}
+  m_LocalPosition: {x: 7.152, y: 9.82, z: -5.301}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3317,8 +3317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63acfed2360e4d4bbe8c2d3669ea8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poiName: Cube
-  viewTarget: {fileID: 1194539317}
+  poiName: Ugol 1
+  viewTarget: {fileID: 1003256315}
   order: 0
 --- !u!1001 &1248530450
 PrefabInstance:
@@ -4556,7 +4556,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 144850448}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.9998373
+  m_Size: 0.9999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
