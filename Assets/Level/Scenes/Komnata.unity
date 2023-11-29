@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44197297, g: 0.49093652, b: 0.5708784, a: 1}
+  m_IndirectSpecularColor: {r: 0.44197243, g: 0.49093592, b: 0.57087725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -529,8 +529,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 752011275}
   m_HandleRect: {fileID: 752011274}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.99985725
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1846,7 +1846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 391.39938, y: -9.172311}
+  m_AnchoredPosition: {x: 391.39975, y: -9.143786}
   m_SizeDelta: {x: 0, y: 16.339996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602537645
@@ -2621,6 +2621,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 073da10c5b92fe14cbddd2e1e7485e81, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 864a02450ed8a4d44923b95c83426202, type: 2}
     - target: {fileID: 919132149155446097, guid: 073da10c5b92fe14cbddd2e1e7485e81, type: 3}
       propertyPath: m_Name
       value: stol
@@ -3259,6 +3263,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 95.757
       objectReference: {fileID: 0}
+    - target: {fileID: -3230359877503427227, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: cc109ad71fb7040d296780e075b5af85, type: 2}
     - target: {fileID: 919132149155446097, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
       propertyPath: m_Name
       value: mmhoome
@@ -3291,9 +3299,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2382799219754379413, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_Range
+      value: 6.551445
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.48069862
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.48235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800219917424603212, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800219917424603212, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 31.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -44.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8775984853132938334, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
+    - {fileID: 7869873546869171050, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b9d4c201a701f949a886e867a2b56c6, type: 3}
       insertIndex: 0
@@ -4711,7 +4764,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 144850448}
   m_Direction: 0
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.99985677
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
